@@ -1,10 +1,19 @@
-import React from "react";
+import React,{ useState } from "react";
+import { Link } from 'react-router-dom';
 import "./topbar.css";
+ import Sidebar from '../sidebar/sidebar';
 
 function Topbar() {
+
+  const [sidebarOpen,setSidebarOpen] = useState(false);
+  
+  const toggleSidebar = (open)=>{
+    setSidebarOpen(open);
+  }
+
   return (
     <>
-      <header class="header">
+      <header className="header">
         <a href="index.html" className="logo">
           Shenora
         </a>
@@ -15,15 +24,16 @@ function Topbar() {
             id="search-box"
             placeholder="search here..."
           ></input>
-          <label for="search-box" class="fas fa-search"></label>
+          <label htmlFor="search-box" class="fas fa-search"></label>
         </form>
 
         <div class="icons">
-          <div id="menu-btn" class="fas fa-bars"></div>
+          <div id="menu-btn" class="fas fa-bars" onClick={()=>{toggleSidebar(true)}}></div>
+          <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} /> 
           <div id="search-btn" class="fas fa-search"></div>
-          <a href="login.html" className="fas fa-user"></a>
+          {/*  <Link to="login.html" className="fas fa-user"></Link>
 
-          <a href="cart.html" class="fas fa-shopping-cart"></a>
+          <Link to="cart.html" class="fas fa-shopping-cart"></Link> */}
         </div>
       </header>
     </>

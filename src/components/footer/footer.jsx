@@ -18,10 +18,10 @@ const footer = () => {
         </div>
 
         <div className="share">
-          <a href="#" className="fab fa-facebook-f"></a>
-          <a href="#" className="fab fa-twitter"></a>
-          <a href="#" className="fab fa-instagram"></a>
-          <a href="#" className="fab fa-linkedin"></a>
+          <a href="s" className="fab fa-facebook-f">f</a>
+          <a href="s" className="fab fa-twitter">f</a>
+          <a href="s" className="fab fa-instagram">d</a>
+          <a href="s" className="fab fa-linkedin">d</a>
         </div>
       </section>
       
